@@ -1,39 +1,18 @@
-import sys
-from bisect import bisect_left
-from turtle import heading
+a= int(input())
+b=int(input())
+c= int(input())
 
-def search():
-    min_value = float('inf')
-    cnt =1
-    for h in range(1,t+1):
-        top_idx, bot_idx = bisect_left(tops, (t+1)-h), bisect_left(bottoms, h)
-        obs_cnt = n - (top_idx+bot_idx)
-        if obs_cnt < min_value: 
-             min_value = obs_cnt
-             cnt = 1 
-        elif obs_cnt == min_value:
-             cnt += 1 
-             return min_value, cnt
+cnt = 0
 
 
-
-n, t = map(int, sys.stdin.readline().split())
-
-tops, bottoms = [],[]
-
-for i in range(n):
-    height = int(sys.stdin.readline().strip())
-    if i % 2 ==0:
-        bottoms.append(height)
-    else:
-        tops.append(height)
-
-tops.sort()
-bottoms.sort()
-
-print(*search())
+answer = []
+answer = (a*b*c)
 
 
-
-
-
+for i in range(10):
+    for j in range(len(answer)):
+        if answer[i] == i:
+            cnt += 1
+print(cnt)
+#0이 몇번 쓰였는지 출력하는 첫번째 반복문
+#1-9까지 몇번쓰였는지 확인 
